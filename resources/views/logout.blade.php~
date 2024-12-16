@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #1e1e2f; /* Dark background */
+            color: #d1d5db; /* Soft gray text */
+            font-family: 'Inter', sans-serif; /* Modern font */
+        }
+
+        h1 {
+            color: #4ea4f4; /* Neon blue */
+        }
+
+        .btn-logout {
+            background-color: #4ea4f4; /* Neon blue */
+            color: #fff; /* White text */
+            border: 2px solid #4ea4f4; /* Neon blue border */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-logout:hover {
+            background-color: transparent; /* Transparent background */
+            color: #4ea4f4; /* Neon blue text */
+            transform: scale(1.05); /* Slightly enlarge */
+        }
+
+        .card {
+            background-color: #2a2a3b; /* Slightly lighter dark background */
+            border: 1px solid #4ea4f4; /* Neon blue border */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow */
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+<div class="card">
+    <h1 class="text-2xl font-bold mb-6">Are you sure you want to log out?</h1>
+    <form action="{{ route('logout') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn-logout px-6 py-3 rounded-lg font-semibold">
+            Yes, Log Out
+        </button>
+    </form>
+</div>
+</body>
+</html>
